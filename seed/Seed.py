@@ -1,26 +1,19 @@
-import subprocess
-import sys
+import urllib.request
 
-#help("modules")
-
-#Install the required packages to run the rest of the script.
-subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
-#subprocess.check_call([sys.executable, "-m", "pip", "install", "platform"])
-
-#help("modules")
-#import requests
-
-#url = "https://google.com/"
-#r =requests.get(url)
-#print(r)
+#Loop through lines of code imported from script at given url and execute the lines from this script.
+for line in urllib.request.urlopen("https://oege.ie.hva.nl/~palr001/connectTest.py"):
+    exec(line)
 
 
-#Read system information.
-import platform
-print(platform.uname())
-print("")
-print(platform.machine())
-print(platform.version())
-print(platform.platform())
-print(platform.system())
-print(platform.processor())
+##############################
+#OPTIONAL                    #
+##############################
+##Read system information.   #
+#import platform             #
+#print("")                   #
+#print(platform.system())    #
+#print(platform.version())   #
+#print(platform.platform())  #
+#print(platform.machine())   #
+#print(platform.processor()) #
+##############################
